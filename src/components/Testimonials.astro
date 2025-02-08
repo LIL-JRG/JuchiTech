@@ -1,0 +1,56 @@
+---
+const testimonials = [
+  {
+    name: "Carlos Rodríguez",
+    role: "Diseñador Gráfico",
+    content: "Excelente servicio, la activación fue instantánea y el soporte muy profesional.",
+    image: "/img/testimonials/testimonial_1.webp"
+  },
+  {
+    name: "Ana Martínez",
+    role: "Emprendedora",
+    content: "Increíble lo fácil que fue activar Windows. ¡100% recomendado!",
+    image: "/img/testimonials/testimonial_2.webp"
+  },
+  {
+    name: "Miguel Sánchez",
+    role: "Desarrollador",
+    content: "El mejor servicio de activación que he encontrado. Rápido y confiable.",
+    image: "/img/testimonials/testimonial_3.webp"
+  }
+];
+---
+
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Lo que dicen nuestros clientes
+      </h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Miles de usuarios satisfechos confían en nuestros servicios
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {testimonials.map((testimonial) => (
+        <div class="bg-gray-50 rounded-xl p-8" data-aos="fade-up">
+          <div class="flex items-center mb-4">
+            <img 
+              src={testimonial.image} 
+              alt={testimonial.name} 
+              class="w-12 h-12 rounded-full mr-4" 
+              loading="lazy"
+              decoding="async"
+            />
+            <div>
+              <h3 class="font-semibold">{testimonial.name}</h3>
+              <p class="text-gray-600 text-sm">{testimonial.role}</p>
+            </div>
+          </div>
+          <p class="text-gray-700">{testimonial.content}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

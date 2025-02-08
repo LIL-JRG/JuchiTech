@@ -1,0 +1,130 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Activación remota de software profesional y confiable" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <script defer src="https://sellauth.com/assets/js/sellauth-embed-2.js"></script>
+    
+    <!-- Metaetiquetas para SEO -->
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="activación windows, activación office, reparación computadoras, mantenimiento pc, formateo, optimización, juchitán">
+    <meta name="author" content="Tu Nombre">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tudominio.com/">
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content={description}>
+    <meta property="og:image" content="https://tudominio.com/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://tudominio.com/">
+    <meta property="twitter:title" content={title}>
+    <meta property="twitter:description" content={description}>
+    <meta property="twitter:image" content="https://tudominio.com/og-image.jpg">
+
+    <!-- Preload de recursos críticos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Schema.org para Rich Snippets -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Servicios de Activación y Mantenimiento de PC",
+        "image": "https://tudominio.com/logo.png",
+        "description": "Servicios profesionales de activación de software y mantenimiento de computadoras en Juchitán de Zaragoza",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Tu Dirección",
+          "addressLocality": "Juchitán de Zaragoza",
+          "addressRegion": "Oaxaca",
+          "postalCode": "70000",
+          "addressCountry": "MX"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "16.4333",
+          "longitude": "-95.0167"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "09:00",
+          "closes": "21:00"
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-gray-50">
+    <slot />
+    <script>
+      import AOS from 'aos';
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100,
+        delay: 100,
+      });
+
+      // SellAuth initialization
+      function initSellAuth() {
+        if (typeof window.sellAuthEmbed === 'undefined') {
+          setTimeout(initSellAuth, 100);
+          return;
+        }
+        
+        document.querySelectorAll('.sellauth-button').forEach(button => {
+          button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const config = JSON.parse(this.getAttribute('data-sellauth-config'));
+            window.sellAuthEmbed.checkout(this, config);
+          });
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', initSellAuth);
+
+      // Smooth scroll para anclas
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const href = this.getAttribute('href');
+          if (href === '#') return;
+          
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

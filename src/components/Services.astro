@@ -1,0 +1,312 @@
+---
+interface Feature {
+  title: string;
+  description: string;
+  icon: string;
+  features: string[];
+  productId: number;
+  variantId: number;
+  price: string;
+  oldPrice?: string;
+  tag: string;
+  popular?: boolean;
+}
+
+const services: Feature[] = [
+  {
+    title: "Windows 11/10",
+    description: "Activación permanente y garantizada",
+    icon: "🪟",
+    features: [
+      "Activación instantánea",
+      "Soporte de por vida",
+      "Actualizaciones oficiales",
+      "Compatible con todas las versiones"
+    ],
+    productId: 214919,
+    variantId: 269206,
+    price: "$199",
+    oldPrice: "$299",
+    tag: "activacion",
+    popular: true
+  },
+  {
+    title: "Microsoft Office",
+    description: "Suite completa de productividad",
+    icon: "📊",
+    features: [
+      "Word, Excel, PowerPoint",
+      "Activación permanente",
+      "Actualizaciones incluidas",
+      "Soporte técnico"
+    ],
+    productId: 216558,
+    variantId: 271845,
+    price: "$299",
+    oldPrice: "$499",
+    tag: "activacion",
+    popular: true
+  },
+  {
+    title: "Diagnóstico Completo",
+    description: "Evaluación profesional de tu equipo",
+    icon: "🔍",
+    features: [
+      "Revisión de hardware",
+      "Análisis de rendimiento",
+      "Detección de problemas",
+      "Detección de virus	"
+    ],
+    productId: 217245,
+    variantId: 272754,
+    price: "$299",
+    tag: "mantenimiento",
+    popular: true
+  },
+  {
+    title: "Formateo Profesional",
+    description: "Reinstalación completa del sistema",
+    icon: "💾",
+    features: [
+      "Respaldo de datos",
+      "Windows original",
+      "Drivers actualizados",
+      "Programas básicos"
+    ],
+    productId: 217255,
+    variantId: 272781,
+    price: "$399",
+    oldPrice: "$599",
+    tag: "mantenimiento"
+  },
+  {
+    title: "Optimización Premium",
+    description: "Mejora el rendimiento de tu PC",
+    icon: "⚡",
+    features: [
+      "Limpieza profunda",
+      "Optimización del sistema",
+      "Eliminación de malware",
+      "Sistema operativo optimizado"
+    ],
+    productId: 217257,
+    variantId: 272785,
+    price: "$499",
+    tag: "mantenimiento",
+    popular: true
+  },
+  {
+    title: "Mantenimiento Preventivo",
+    description: "Cuidado integral de tu equipo",
+    icon: "🛠️",
+    features: [
+      "Limpieza de hardware",
+      "Cambio de pasta térmica",
+      "Revisión de componentes",
+      "Limpieza de gabinete"
+    ],
+    productId: 217259,
+    variantId: 272790,
+    price: "$599",
+    oldPrice: "$699",
+    tag: "mantenimiento"
+  },
+  {
+    title: "Campaña Publicitaria",
+    description: "Impulsa tu negocio en redes sociales",
+    icon: "📢",
+    features: [
+      "Estrategia personalizada",
+      "Gestión de redes",
+      "Reportes mensuales",
+      "[No incluye pauta]",
+    ],
+    productId: 217262,
+    variantId: 272794,
+    price: "$299",
+    tag: "marketing",
+    popular: true
+  },
+/*   {
+    title: "Diseño de Logo",
+    description: "Identidad visual profesional",
+    icon: "🎨",
+    features: [
+      "Diseño original",
+      "Múltiples propuestas",
+      "Archivos editables",
+      "Uso comercial"
+    ],
+    productId: 78,
+    variantId: 73,
+    price: "$799",
+    oldPrice: "$999",
+    tag: "diseno"
+  }, */
+  {
+    title: "Diseño Web",
+    description: "Landing pages modernas y responsivas",
+    icon: "💻",
+    features: [
+      "Diseño personalizado",
+      "Optimizado para móviles",
+      "SEO básico",
+      "Soporte técnico"
+    ],
+    productId: 79,
+    variantId: 74,
+    price: "$???",
+    tag: "web",
+    popular: true
+  }
+];
+
+interface Tag {
+  id: string;
+  label: string;
+  icon: string;
+}
+
+const tags: Tag[] = [
+  { id: "populares", label: "Más Populares", icon: "⭐" },
+  { id: "activacion", label: "Activación", icon: "🔑" },
+  { id: "mantenimiento", label: "Mantenimiento", icon: "🔧" },
+  { id: "marketing", label: "Marketing", icon: "📢" },
+  { id: "web", label: "Web", icon: "💻" },
+  /* { id: "diseno", label: "Diseño", icon: "🎨" } */
+];
+---
+
+<section id="servicios" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <span class="text-primary-600 font-semibold text-sm uppercase tracking-wider">Nuestros Servicios</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
+        Soluciones Profesionales
+      </h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Servicios completos de software y mantenimiento para tu computadora
+      </p>
+    </div>
+
+    <!-- Tags Filter -->
+    <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up">
+      {tags.map((tag) => (
+        <button
+          class="filter-tag group px-6 py-3 rounded-full border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white transition-all duration-300"
+          data-tag={tag.id}
+        >
+          <span class="flex items-center gap-2">
+            {tag.icon} {tag.label}
+          </span>
+        </button>
+      ))}
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="services-grid">
+      {services.map((service) => (
+        <div 
+          class={`service-card bg-white rounded-2xl shadow-xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${service.popular ? 'popular' : ''}`}
+          data-tag={service.tag}
+          data-aos="fade-up"
+        >
+          <div class="flex justify-between items-start mb-4">
+            <div class="text-4xl">{service.icon}</div>
+            <div class="text-right">
+              {service.oldPrice && (
+                <span class="text-sm text-gray-500 line-through block">{service.oldPrice}</span>
+              )}
+              <span class="text-xl font-bold text-primary-600">{service.price}</span>
+            </div>
+          </div>
+          {service.popular && (
+            <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full mb-2">
+              ⭐ Popular
+            </span>
+          )}
+          {service.oldPrice && (
+            <span class="inline-block bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full mb-2 ml-2">
+              🔥 Oferta
+            </span>
+          )}
+          <h3 class="text-xl font-bold mb-2">{service.title}</h3>
+          <p class="text-gray-600 mb-6">{service.description}</p>
+          <ul class="space-y-3 mb-8">
+            {service.features.map((feature) => (
+              <li class="flex items-center text-gray-700">
+                <svg class="w-5 h-5 text-primary-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                {feature}
+              </li>
+            ))}
+          </ul>
+          {service.tag === 'web' ? (
+            <a
+              target="_blank"
+              href="https://wa.me/+525665824341?text=Hola,%20me%20interesa%20el%20servicio%20de%20diseño%20web"
+              class="w-full bg-primary-600 text-white px-6 py-4 rounded-xl hover:bg-primary-700 transition-all duration-300 flex items-center justify-center space-x-2 group"
+            >
+              <span>Enviar mensaje</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+          ) : (
+            <button
+              class="sellauth-button w-full bg-primary-600 text-white px-6 py-4 rounded-xl hover:bg-primary-700 transition-all duration-300 flex items-center justify-center space-x-2 group"
+              type="button"
+              data-sellauth-config={JSON.stringify({
+                cart: [{ productId: service.productId, variantId: service.variantId, quantity: 1 }],
+                shopId: 123759,
+                modal: false
+              })}
+            >
+              <span>Contratar Servicio</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </button>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  // Filter functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterTags = document.querySelectorAll('.filter-tag');
+    const serviceCards = document.querySelectorAll('.service-card');
+    
+    // Show popular services by default
+    filterServices('populares');
+
+    filterTags.forEach(tag => {
+      tag.addEventListener('click', () => {
+        // Remove active class from all tags
+        filterTags.forEach(t => t.classList.remove('bg-primary-600', 'text-white'));
+        // Add active class to clicked tag
+        tag.classList.add('bg-primary-600', 'text-white');
+        
+        const selectedTag = (tag as HTMLElement).dataset.tag;
+        filterServices(selectedTag);
+      });
+    });
+
+    function filterServices(tag) {
+      serviceCards.forEach((card: HTMLElement) => {
+        if (tag === 'populares') {
+          card.style.display = card.classList.contains('popular') ? 'block' : 'none';
+        } else {
+          card.style.display = card.dataset.tag === tag ? 'block' : 'none';
+        }
+      });
+    }
+
+    // Set "Más Populares" as active by default
+    const popularesTag = document.querySelector('[data-tag="populares"]');
+    popularesTag.classList.add('bg-primary-600', 'text-white');
+  });
+</script>

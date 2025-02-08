@@ -1,0 +1,63 @@
+---
+const faqs = [
+  {
+    question: "¿Cómo funciona la activación remota?",
+    answer: "La activación remota se realiza a través de una conexión segura con tu equipo. Una vez que realices el pago, te proporcionaremos las instrucciones detalladas y el soporte necesario para completar la activación en minutos."
+  },
+  {
+    question: "¿Las licencias son permanentes?",
+    answer: "Sí, todas nuestras licencias son permanentes y oficiales. Una vez activado el software, podrás realizar actualizaciones sin problemas y la licencia permanecerá activa."
+  },
+  {
+    question: "¿Qué métodos de pago aceptan?",
+    answer: "Aceptamos múltiples métodos de pago, incluyendo tarjetas de crédito/débito, y transferencias bancarias (contactar por WhatsApp). Todos los pagos son procesados de manera segura."
+  },
+  {
+    question: "¿Cuánto tiempo tarda la activación?",
+    answer: "El proceso de activación es inmediato una vez que recibimos el pago. En la mayoría de los casos, el software queda activado en menos de 10 minutos."
+  },
+  {
+    question: "¿Ofrecen garantía?",
+    answer: "Sí, todos nuestros servicios incluyen garantía. Si por algún motivo la activación no funciona correctamente, te ofrecemos soporte técnico gratuito."
+  },
+  {
+    question: "¿Necesito tener conocimientos técnicos?",
+    answer: "No, nuestro proceso está diseñado para ser simple y accesible para todos. Te guiaremos paso a paso y nuestro equipo de soporte estará disponible para ayudarte en cualquier momento."
+  }
+];
+---
+
+<section class="py-20 bg-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <span class="text-primary-600 font-semibold text-sm uppercase tracking-wider">FAQ</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
+        Preguntas Frecuentes
+      </h2>
+      <p class="text-lg text-gray-600">
+        Encuentra respuestas a las preguntas más comunes sobre nuestros servicios
+      </p>
+    </div>
+
+    <div class="space-y-4" data-aos="fade-up">
+      {faqs.map((faq, index) => (
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex justify-between items-center w-full px-4 py-5 sm:p-6 text-left cursor-pointer">
+            <span class="text-lg font-semibold text-gray-900">{faq.question}</span>
+            <svg
+              class="h-6 w-6 text-gray-400 group-open:rotate-180 transition-transform"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <div class="px-4 pb-5 sm:px-6 sm:pb-6">
+            <p class="text-gray-600">{faq.answer}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

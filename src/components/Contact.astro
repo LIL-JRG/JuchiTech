@@ -1,0 +1,271 @@
+---
+---
+<section id="contacto" class="py-20 bg-gradient-to-b from-gray-50 to-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto" data-aos="fade-up">
+      <div class="text-center mb-12">
+        <span class="text-primary-600 font-semibold text-sm uppercase tracking-wider">Contacto</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
+          ¿Necesitas ayuda con tu equipo?
+        </h2>
+        <p class="text-lg text-gray-600">
+          Estamos en Juchitán de Zaragoza para asistirte. Contáctanos y te responderemos en menos de 24 horas.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div class="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-100 text-primary-600 rounded-full mb-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Teléfono</h3>
+          <p class="text-gray-600">Disponible 8:00 AM - 2:00 PM</p>
+          <a href="tel:+529712345678" class="text-primary-600 hover:text-primary-700 font-medium mt-2 block">
+            +52 (56) 6582-4341
+          </a>
+        </div>
+
+        <!-- <div class="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-100 text-primary-600 rounded-full mb-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Correo</h3>
+          <p class="text-gray-600">Respuesta en 24 horas</p>
+          <a href="mailto:juchitech.solutions@gmail.com" class="text-primary-600 hover:text-primary-700 font-medium mt-2 block px-4 break-all">
+            juchitech.solutions@gmail.com
+          </a>
+        </div> -->
+
+        <div class="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="300">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-100 text-primary-600 rounded-full mb-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Ubicación</h3>
+          <p class="text-gray-600">Juchitán de Zaragoza</p>
+          <span class="text-primary-600 font-medium mt-2 block">Oaxaca, México</span>
+        </div>
+      </div>
+      
+      <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12" data-aos="fade-up">
+        <form 
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          class="space-y-6"
+          x-data="contactForm()"
+          @submit.prevent="submitForm"
+        >
+          <input type="hidden" name="access_key" value="5aff34da-96c7-40b3-97bc-f77b767a224a">
+          <input type="hidden" name="subject" value="Nuevo contacto desde la web">
+          <input type="checkbox" name="botcheck" class="hidden">
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="relative">
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre completo</label>
+              <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                required
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-primary-500 transition-colors"
+                x-model="formData.name"
+              />
+              <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none mt-7">
+                <span class="text-red-500" x-show="formData.name.length > 0 && formData.name.length < 3">*</span>
+              </div>
+            </div>
+            <div class="relative">
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo electrónico</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                required
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-primary-500 transition-colors"
+                x-model="formData.email"
+              />
+              <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none mt-7">
+                <span class="text-red-500" x-show="!isValidEmail(formData.email) && formData.email.length > 0">*</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative">
+            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Teléfono (opcional)</label>
+            <input 
+              type="tel" 
+              id="phone" 
+              name="phone"
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-primary-500 transition-colors"
+              x-model="formData.phone"
+              pattern="[0-9]{10}"
+            />
+          </div>
+
+          <div>
+            <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Servicio de interés</label>
+            <select 
+              id="service" 
+              name="service" 
+              required
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-primary-500 transition-colors"
+              x-model="formData.service"
+            >
+              <option value="" disabled selected>Selecciona un servicio</option>
+              <option value="windows">Activación de Windows</option>
+              <option value="office">Activación de Office</option>
+              <option value="diagnostico">Diagnóstico</option>
+              <option value="formateo">Formateo</option>
+              <option value="optimizacion">Optimización</option>
+              <option value="mantenimiento">Mantenimiento</option>
+              <option value="otro">Otro servicio</option>
+            </select>
+          </div>
+          
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
+            <textarea 
+              id="message" 
+              name="message" 
+              rows="4" 
+              required
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-primary-500 transition-colors resize-none"
+              x-model="formData.message"
+              placeholder="Escribe tu mensaje aquí..."
+            ></textarea>
+          </div>
+
+          <!-- Modal de éxito -->
+          <div 
+            x-show="showSuccess" 
+            x-transition.opacity
+            class="fixed inset-0 z-50 flex items-center justify-center px-4 bg-black bg-opacity-50"
+            @click.self="showSuccess = false"
+            style="display: none;"
+          >
+            <div class="bg-white rounded-2xl p-8 max-w-md w-full shadow-xl">
+              <div class="text-center">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 text-green-600 rounded-full mb-4">
+                  <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">¡Mensaje enviado con éxito!</h3>
+                <p class="text-gray-600 mb-6">Te contactaremos pronto.</p>
+                <button 
+                  @click="showSuccess = false"
+                  class="bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition-all duration-300"
+                >
+                  Cerrar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal de error -->
+          <div 
+            x-show="showError" 
+            x-transition.opacity
+            class="fixed inset-0 z-50 flex items-center justify-center px-4 bg-black bg-opacity-50"
+            @click.self="showError = false"
+            style="display: none;"
+          >
+            <div class="bg-white rounded-2xl p-8 max-w-md w-full shadow-xl">
+              <div class="text-center">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-red-100 text-red-600 rounded-full mb-4">
+                  <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Error al enviar el mensaje</h3>
+                <p class="text-gray-600 mb-6">Por favor, intenta nuevamente.</p>
+                <button 
+                  @click="showError = false"
+                  class="bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition-all duration-300"
+                >
+                  Cerrar
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <button
+            type="submit"
+            class="w-full bg-primary-600 text-white px-6 py-4 rounded-lg hover:bg-primary-700 transition-all duration-300 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+            :disabled="loading"
+          >
+            <span>Enviar</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function contactForm() {
+  return {
+    formData: {
+      name: '',
+      email: '',
+      phone: '',
+      service: '',
+      message: ''
+    },
+    loading: false,
+    showSuccess: false,
+    showError: false,
+    isValidEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    },
+    async submitForm(e) {
+      this.loading = true;
+      this.showSuccess = false;
+      this.showError = false;
+
+      const formData = new FormData();
+      formData.append('access_key', '5aff34da-96c7-40b3-97bc-f77b767a224a');
+      formData.append('name', this.formData.name);
+      formData.append('email', this.formData.email);
+      formData.append('phone', this.formData.phone);
+      formData.append('service', this.formData.service);
+      formData.append('message', this.formData.message);
+      formData.append('subject', `Nuevo contacto desde la web - ${this.formData.service}`);
+
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          this.showSuccess = true;
+          this.formData = {
+            name: '',
+            email: '',
+            phone: '',
+            service: '',
+            message: ''
+          };
+        } else {
+          this.showError = true;
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        this.showError = true;
+      } finally {
+        this.loading = false;
+      }
+    }
+  };
+}
+</script>
