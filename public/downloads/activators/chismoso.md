@@ -1,0 +1,1 @@
+# Si llegas a encontrar esta rama por casualidad, o porque la viste al momento de descargar el instalador, déjame decirte que: AAAAAAH QUE BURRU' CHISMOSO ERES HAAAAAA!
