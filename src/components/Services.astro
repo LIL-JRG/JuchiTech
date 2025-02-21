@@ -42,12 +42,12 @@ const services: Feature[] = [
     ],
     productId: 216558,
     variantId: 271845,
-    price: "$299",
-    oldPrice: "$499",
+    price: "$199",
+    oldPrice: "$299",
     tag: "activacion",
     popular: true
   },
-  {
+/*   {
     title: "Diagnóstico Completo",
     description: "Evaluación profesional de tu equipo",
     icon: "🔍",
@@ -62,7 +62,7 @@ const services: Feature[] = [
     price: "$299",
     tag: "mantenimiento",
     popular: true
-  },
+  }, */
   {
     title: "Formateo Profesional",
     description: "Reinstalación completa del sistema",
@@ -77,7 +77,8 @@ const services: Feature[] = [
     variantId: 272781,
     price: "$399",
     oldPrice: "$599",
-    tag: "mantenimiento"
+    tag: "mantenimiento",
+    popular: true
   },
   {
     title: "Optimización Premium",
@@ -95,7 +96,7 @@ const services: Feature[] = [
     tag: "mantenimiento",
     popular: true
   },
-  {
+/*   {
     title: "Mantenimiento Preventivo",
     description: "Cuidado integral de tu equipo",
     icon: "🛠️",
@@ -110,13 +111,13 @@ const services: Feature[] = [
     price: "$599",
     oldPrice: "$699",
     tag: "mantenimiento"
-  },
+  }, */
   {
     title: "Campaña Publicitaria",
     description: "Impulsa tu negocio en redes sociales",
     icon: "📢",
     features: [
-      "Estrategia personalizada",
+      "Público personalizado",
       "Copywriting",
       "Reportes mensuales",
       "[No incluye pauta]",
@@ -259,7 +260,7 @@ const tags: Tag[] = [
               data-sellauth-config={JSON.stringify({
                 cart: [{ productId: service.productId, variantId: service.variantId, quantity: 1 }],
                 shopId: 123759,
-                modal: false
+                modal: true
               })}
             >
               <span>Contratar Servicio</span>
